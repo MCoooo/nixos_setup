@@ -12,8 +12,9 @@
   
    imports = [
               ./apps/shell/shell.nix # My zsh and bash config
-	      ./editors/nvim/default.nix
-	      ./apps/git/default.nix
+              ./editors/nvim/default.nix
+              ./apps/git/default.nix
+              ./desktops/hyprland
              ];
 
   # This value determines the Home Manager release that your configuration is

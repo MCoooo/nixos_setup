@@ -1,14 +1,13 @@
 {pkgs, ...}: {
+
+  imports = [
+              ./keymaps.nix # My zsh and bash config
+	      ./options.nix
+	    ];
+
   programs.nixvim = {
     enable = true;
-    globals.mapleader = " ";
     colorschemes.gruvbox.enable = true;
-
-    options = {
-      number = true;         # Show line numbers
-      relativenumber = true; # Show relative line numbers
-      shiftwidth = 2;        # Tab width should be 2
-    };
 
     plugins = {
       telescope = {
