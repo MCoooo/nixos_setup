@@ -14,7 +14,7 @@
               ./apps/shell/shell.nix # My zsh and bash config
               ./editors/nvim/default.nix
               ./apps/git/default.nix
-              ./desktops/hyprland
+              ./terminals/kitty.nix
              ];
 
   # This value determines the Home Manager release that your configuration is
@@ -36,6 +36,7 @@
     eza
     bat
     ripgrep
+    kitty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
