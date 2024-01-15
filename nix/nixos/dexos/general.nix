@@ -12,6 +12,8 @@
       source-serif
       ubuntu_font_family
       work-sans
+      hasklig
+      jetbrains-mono
     ];
 
     fontconfig = {

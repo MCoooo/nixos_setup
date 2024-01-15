@@ -12,6 +12,7 @@
   
    imports = [
               ./apps/shell/shell.nix # My zsh and bash config
+              ./editors/emacs/default.nix
               ./editors/nvim/default.nix
               ./apps/git/default.nix
               ./terminals/kitty.nix
@@ -31,7 +32,6 @@
   home.packages = with pkgs; [
     zsh
     zig
-    emacs
     fd
     eza
     bat
@@ -60,6 +60,7 @@
   #  /etc/profiles/per-user/dave/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    TERM = "kitty";
     # EDITOR = "emacs";
   };
   
