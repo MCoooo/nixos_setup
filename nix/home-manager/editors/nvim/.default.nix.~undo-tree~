@@ -1,0 +1,18 @@
+(undo-tree-save-format-version . 1)
+"4fecf2ef258c0c1472bb0de1bfc132d82c6bbc6a"
+[nil nil nil nil (26021 36922 856604 230000) 0 nil]
+([nil current ((#("    extraConfigLua =
+      # lua
+      ''
+        vim.lsp.handlers[\"textDocument/hover\"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        	border = \"rounded\",
+        })
+
+        vim.api.nvim_create_autocmd({ \"BufWritePost\" }, {
+        	callback = function()
+        		require(\"lint\").try_lint()
+        	end,
+        })
+      '';
+" 0 4 (fontified t) 4 18 (face nix-attribute-face fontified t) 18 27 (fontified t) 27 33 (face font-lock-comment-face fontified t) 33 39 (fontified t) 39 40 (face font-lock-string-face nix-string-type 39 syntax-table (15) fontified t) 40 329 (face font-lock-string-face fontified t) 329 330 (face font-lock-string-face nix-string-type 39 syntax-table (15) fontified t) 330 332 (fontified t)) . 2081) (undo-tree-id0 . -322) (undo-tree-id1 . -322) (undo-tree-id2 . -117) (undo-tree-id3 . -117) (undo-tree-id4 . -117) (undo-tree-id5 . -117) (undo-tree-id6 . -117) (undo-tree-id7 . -130) (undo-tree-id8 . -130) (undo-tree-id9 . -130) (undo-tree-id10 . -130) (undo-tree-id11 . -130) (undo-tree-id12 . -159) (undo-tree-id13 . -159) (undo-tree-id14 . -159) (undo-tree-id15 . -159) (undo-tree-id16 . -159) (undo-tree-id17 . -170) (undo-tree-id18 . -170) (undo-tree-id19 . -170) (undo-tree-id20 . -170) (undo-tree-id21 . -170) (undo-tree-id22 . -171) (undo-tree-id23 . -171) (undo-tree-id24 . -171) (undo-tree-id25 . -171) (undo-tree-id26 . -171) (undo-tree-id27 . -229) (undo-tree-id28 . -229) (undo-tree-id29 . -229) (undo-tree-id30 . -229) (undo-tree-id31 . -229) (undo-tree-id32 . -260) (undo-tree-id33 . -260) (undo-tree-id34 . -260) (undo-tree-id35 . -260) (undo-tree-id36 . -260) (undo-tree-id37 . -297) (undo-tree-id38 . -297) (undo-tree-id39 . -297) (undo-tree-id40 . -297) (undo-tree-id41 . -297) (undo-tree-id42 . -311) (undo-tree-id43 . -311) (undo-tree-id44 . -311) (undo-tree-id45 . -311) (undo-tree-id46 . -311) (undo-tree-id47 . -322) (undo-tree-id48 . -322) (undo-tree-id49 . -322) (undo-tree-id50 . -322) (undo-tree-id51 . -322) (undo-tree-id52 . -332) (undo-tree-id53 . -332) (undo-tree-id54 . -332) (undo-tree-id55 . -332) (undo-tree-id56 . -332) (undo-tree-id57 . -332) (undo-tree-id58 . -332) (undo-tree-id59 . -332) (undo-tree-id60 . -332) (undo-tree-id61 . -332) (undo-tree-id62 . -332) (undo-tree-id63 . -332) (undo-tree-id64 . -332) (undo-tree-id65 . -332) (undo-tree-id66 . -332) (undo-tree-id67 . -332) (undo-tree-id68 . -332) (undo-tree-id69 . -332) (undo-tree-id70 . -332) (undo-tree-id71 . -332) (undo-tree-id72 . -322) (undo-tree-id73 . -322) (undo-tree-id74 . -322) (undo-tree-id75 . -322) (undo-tree-id76 . -322) (undo-tree-id77 . -322) (undo-tree-id78 . -322) (undo-tree-id79 . -322) (undo-tree-id80 . -322) (undo-tree-id81 . -322) (undo-tree-id82 . -322) (undo-tree-id83 . -322) (undo-tree-id84 . -322) (undo-tree-id85 . -322) (undo-tree-id86 . -322) (undo-tree-id87 . -322) (undo-tree-id88 . -322) (undo-tree-id89 . -322) (undo-tree-id90 . -322) (undo-tree-id91 . -322) (undo-tree-id92 . -322) (undo-tree-id93 . -322) (undo-tree-id94 . -322) (undo-tree-id95 . -322) (undo-tree-id96 . -322) (undo-tree-id97 . -322) (undo-tree-id98 . -322) (undo-tree-id99 . -322) (undo-tree-id100 . -322) (undo-tree-id101 . -322) (undo-tree-id102 . -322) (undo-tree-id103 . -322) (undo-tree-id104 . -322) (undo-tree-id105 . -322) (undo-tree-id106 . -322) (undo-tree-id107 . -322) (undo-tree-id108 . -322) (undo-tree-id109 . -322) (undo-tree-id110 . -332) (undo-tree-id111 . -331) 2403 (t 26021 6486 97469 674000)) nil (26021 36922 856599 730000) 0 nil])
+nil

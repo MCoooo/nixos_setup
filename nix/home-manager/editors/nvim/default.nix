@@ -82,19 +82,6 @@
         }; 
       };
     };
-    extraConfigLua =
-      # lua
-      ''
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        	border = "rounded",
-        })
-
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        	callback = function()
-        		require("lint").try_lint()
-        	end,
-        })
-      '';
     extraPlugins = with pkgs.vimPlugins; [
       {
         plugin = comment-nvim;

@@ -67,7 +67,7 @@
 
 (set-face-attribute 'default nil
   :font "Fira Code Nerd Font"
-  :height 144
+  :height 168
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "Hasklig"
@@ -91,7 +91,7 @@
 (use-package all-the-icons)
 
 (use-package doom-themes
-  :init (load-theme 'doom-henna t))
+  :init (load-theme 'doom-rouge t))
 
 (use-package doom-modeline
   :ensure t
@@ -390,6 +390,9 @@
 
 (use-package lsp-ivy
   :after lsp)
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
 
 (use-package go-mode
   :mode "\\.go\\'")
