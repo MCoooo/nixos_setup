@@ -18,6 +18,13 @@
               ./terminals/kitty.nix
              ];
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -39,6 +46,40 @@
     kitty
     qbittorrent
     wofi
+    tmux
+    direnv
+    gnome.gnome-tweaks
+    citrix_workspace
+    gnome.dconf-editor
+    gnome-extension-manager
+    gradience
+
+    # useful utils
+    nautilus-open-any-terminal
+
+    # extensions
+    gnomeExtensions.appindicator
+    gnomeExtensions.aylurs-widgets
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.extensions-sync
+    gnomeExtensions.hibernate-status-button
+    gnomeExtensions.logo-menu
+    gnomeExtensions.just-perfection
+    gnomeExtensions.pano
+    gnomeExtensions.pop-shell
+    gnomeExtensions.rounded-window-corners
+    gnomeExtensions.search-light
+    gnomeExtensions.smart-auto-move
+    gnomeExtensions.space-bar
+    gnomeExtensions.order-gnome-shell-extensions
+
+    libgda # used by pano extension
+
+    # styles
+    adw-gtk3
+    adwaita-qt
+    papirus-icon-theme
+    papirus-folders
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -106,4 +147,11 @@
   
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+
 }

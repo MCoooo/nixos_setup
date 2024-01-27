@@ -38,15 +38,80 @@
           };
         };
       };
+
+      luasnip = {
+        enable = true;
+      };
+      #
+      cmp-nvim-lua = {
+        enable = true;
+      };
+
+       lspkind = {
+        enable = true;
+        cmp.ellipsisChar = "...";
+        cmp.menu = {
+          buffer = "[Buffer]";
+          nvim_lsp = "[LSP]";
+          luasnip = "[LuaSnip]";
+          nvim_lua = "[Lua]";
+          latex_symbols = "[Latex]";
+        };
+        cmp.after = ''
+        function(entry, vim_item, kind)
+        local strings = vim.split(kind.kind, "%s", { trimempty = true })
+        kind.kind = " " .. strings[1] .. " "
+        kind.menu = "   " .. strings[2]
+        return kind
+        end
+        '';
+      };
+
       nvim-cmp = {
         enable = true;
         autoEnableSources = true;
+        mappingPresets = [ "insert" ];
         sources = [
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
-          {name = "luasnip";}
         ];
+          mapping = {
+        "<CR>" = "cmp.mapping.confirm({ select = true })";
+        "<Tab>" = {
+          action = ''
+            function(fallback)
+              if cmp.visible() then
+                cmp.select_next_item()
+              elseif luasnip.expandable() then
+                luasnip.expand()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              elseif check_backspace() then
+                fallback()
+              else
+                fallback()
+              end
+            end
+          '';
+          modes = [ "i" "s" ];
+        };
+      };
+        # mapping = {
+        #   "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+        #   "<C-f>" = "cmp.mapping.scroll_docs(4)";
+        #   "<C-Space>" = "cmp.mapping.complete()";
+        #   "<C-e>" = "cmp.mapping.close()";
+        #   "<Tab>" = {
+        #     modes = ["i" "s"];
+        #     action = "cmp.mapping.select_next_item()";
+        #   };
+        #   "<S-Tab>" = {
+        #     modes = ["i" "s"];
+        #     action = "cmp.mapping.select_prev_item()";
+        #   };
+        #   "<C-s>" = "cmp.mapping.confirm({ select = true })";
+        # };
       };
       lsp = {
         enable = true;
@@ -54,10 +119,10 @@
           tsserver = {
             enable = true;
           };
-          lua-ls = {
-            enable = true;
-            settings.telemetry.enable = false;
-          };
+          # lua-ls = {
+          #   enable = true;
+          #   settings.telemetry.enable = false;
+          # };
           rust-analyzer = {
             enable = true;
             installCargo = true;

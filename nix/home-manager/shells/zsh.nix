@@ -13,6 +13,8 @@ in {
   config = mkIf cfg.enable {
     programs.zsh = mkIf cfg.enable {
       enable = true;
+      interactiveShellInit = ''eval "$(direnv hook zsh)"'';
+      interactiveShellInit = ''export PATH="/users/dave/.cargo/bin:$PATH'';
     };
   };
 }
