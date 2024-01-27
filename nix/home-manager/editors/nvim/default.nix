@@ -75,7 +75,11 @@
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
+          {name = "luasnip";}
         ];
+        snippet = {
+          expand = "luasnip";
+        };
           mapping = {
         "<CR>" = "cmp.mapping.confirm({ select = true })";
         "<Tab>" = {
