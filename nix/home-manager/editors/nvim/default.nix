@@ -80,42 +80,42 @@
         snippet = {
           expand = "luasnip";
         };
-          mapping = {
-        "<CR>" = "cmp.mapping.confirm({ select = true })";
-        "<Tab>" = {
-          action = ''
-            function(fallback)
-              if cmp.visible() then
-                cmp.select_next_item()
-              elseif luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif check_backspace() then
-                fallback()
-              else
-                fallback()
-              end
-            end
-          '';
-          modes = [ "i" "s" ];
+      #     mapping = {
+      #   "<CR>" = "cmp.mapping.confirm({ select = true })";
+      #   "<Tab>" = {
+      #     action = ''
+      #       function(fallback)
+      #         if cmp.visible() then
+      #           cmp.select_next_item()
+      #         elseif luasnip.expandable() then
+      #           luasnip.expand()
+      #         elseif luasnip.expand_or_jumpable() then
+      #           luasnip.expand_or_jump()
+      #         elseif check_backspace() then
+      #           fallback()
+      #         else
+      #           fallback()
+      #         end
+      #       end
+      #     '';
+      #     modes = [ "i" "s" ];
+      #   };
+      # };
+        mapping = {
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<C-e>" = "cmp.mapping.close()";
+          "<Tab>" = {
+            modes = ["i" "s"];
+            action = "cmp.mapping.select_next_item()";
+          };
+          "<S-Tab>" = {
+            modes = ["i" "s"];
+            action = "cmp.mapping.select_prev_item()";
+          };
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
-      };
-        # mapping = {
-        #   "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-        #   "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        #   "<C-Space>" = "cmp.mapping.complete()";
-        #   "<C-e>" = "cmp.mapping.close()";
-        #   "<Tab>" = {
-        #     modes = ["i" "s"];
-        #     action = "cmp.mapping.select_next_item()";
-        #   };
-        #   "<S-Tab>" = {
-        #     modes = ["i" "s"];
-        #     action = "cmp.mapping.select_prev_item()";
-        #   };
-        #   "<C-s>" = "cmp.mapping.confirm({ select = true })";
-        # };
       };
       lsp = {
         enable = true;
