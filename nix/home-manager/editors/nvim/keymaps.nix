@@ -13,7 +13,7 @@
       }
       {
         action = "<C-u>zz";
-        key = "<C-u>";
+        key = "<C-e>";
         options = {
           desc = "Keep cursor in middle when jumping";
         };
@@ -51,28 +51,28 @@
           "n"
         ];
       }
-      {
-        action = "v:count == 0 ? 'gj' : 'j'";
-        key = "j";
-        options = {
-          silent = true;
-          expr = true;
-        };
-        mode = [
-          "n"
-        ];
-      }
-      {
-        action = "v:count == 0 ? 'gk' : 'k'";
-        key = "k";
-        options = {
-          silent = true;
-          expr = true;
-        };
-        mode = [
-          "n"
-        ];
-      }
+      # {
+      #   action = "v:count == 0 ? 'gj' : 'j'";
+      #   key = "j";
+      #   options = {
+      #     silent = true;
+      #     expr = true;
+      #   };
+      #   mode = [
+      #     "n"
+      #   ];
+      # }
+      # {
+      #   action = "v:count == 0 ? 'gk' : 'k'";
+      #   key = "k";
+      #   options = {
+      #     silent = true;
+      #     expr = true;
+      #   };
+      #   mode = [
+      #     "n"
+      #   ];
+      # }
       {
         action = "<C-w>v";
         key = "<leader>|";
@@ -118,6 +118,30 @@
         ];
       }
       {
+        action = "<cmd>wq<cr>";
+        key = "<C-x><C-s><C-x>";
+        options = {
+          desc = "Save file";
+        };
+        mode = [
+          "n"
+          "v"
+          "x"
+        ];
+      }
+      {
+        action = "<cmd>q!<cr>";
+        key = "<C-c><C-c><C-x>";
+        options = {
+          desc = "Save file";
+        };
+        mode = [
+          "n"
+          "v"
+          "x"
+        ];
+      }
+      {
         action = "'_dP";
         key = "<leader>p";
         options = {
@@ -147,6 +171,17 @@
         mode = [
           "v"
           "x"
+        ];
+      }
+      {
+        action ="<esc>";
+        key = "<C-c>";
+        options = {
+          desc = "Escape";
+        };
+        mode = [
+          "v"
+          "i"
         ];
       }
     ];

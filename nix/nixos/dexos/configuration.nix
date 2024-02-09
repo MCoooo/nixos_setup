@@ -118,7 +118,11 @@
   programs.steam.enable = true;
 ###########################################
 ###########################################
-
+security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -3,6 +3,7 @@
   config,
   inputs,
   lib,
+  outputs,
   ...
 }:
 with lib; let
@@ -29,41 +30,41 @@ in {
     enable = mkEnableOption "enable hyprland window manager";
   };
 
-  config = mkIf cfg.enable {
+  # config = mkIf cfg.enable {
     home.sessionVariables = {
       MOZ_ENABLE_WAYLAND = 1;
       QT_QPA_PLATFORM = "wayland";
       LIBSEAT_BACKEND = "logind";
     };
 
-    dconf.settings = {
-      "org/gnome/desktop/privacy" = {
-        remember-recent-files = false;
-      };
-    };
+    # dconf.settings = {
+    #   "org/gnome/desktop/privacy" = {
+    #     remember-recent-files = false;
+    #   };
+    # };
 
     home.packages = with pkgs; [
-      mplayer
-      mtpfs
-      jmtpfs
-      brightnessctl
-      xdg-utils
-      wl-clipboard
-      pamixer
-      playerctl
-
-      inputs.nwg-displays.packages.${pkgs.system}.default
-      grimblast
-      slurp
-      ffmpeg_5-full
-      sway-contrib.grimshot
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.satty
+      # mplayer
+      # mtpfs
+      # jmtpfs
+      # brightnessctl
+      # xdg-utils
+      # wl-clipboard
+      # pamixer
+      # playerctl
+      #
+      # inputs.nwg-displays.packages.${pkgs.system}.default
+      # grimblast
+      # slurp
+      # ffmpeg_5-full
+      # sway-contrib.grimshot
+      # pkgs.xdg-desktop-portal-hyprland
+      # pkgs.satty
     ];
 
     nix.settings = {
       substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
-  };
+  # };
 }

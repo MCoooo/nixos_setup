@@ -47,6 +47,27 @@
         enable = true;
       };
 
+      cmp-buffer = {
+        enable = true;
+      };
+
+      cmp-emoji = {
+        enable = true;
+      };
+
+      cmp-nvim-lsp = {
+        enable = true;
+      };
+
+      cmp-path = {
+        enable = true;
+      };
+
+      cmp_luasnip = {
+        enable = true;
+      };
+
+
        lspkind = {
         enable = true;
         cmp.ellipsisChar = "...";
@@ -56,6 +77,7 @@
           luasnip = "[LuaSnip]";
           nvim_lua = "[Lua]";
           latex_symbols = "[Latex]";
+          # copilot = "[Copilot]";
         };
         cmp.after = ''
         function(entry, vim_item, kind)
@@ -72,35 +94,16 @@
         autoEnableSources = true;
         mappingPresets = [ "insert" ];
         sources = [
+          # {name = "copilot";}
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
           {name = "luasnip";}
+          # {name = "copilot";}
         ];
         snippet = {
           expand = "luasnip";
         };
-      #     mapping = {
-      #   "<CR>" = "cmp.mapping.confirm({ select = true })";
-      #   "<Tab>" = {
-      #     action = ''
-      #       function(fallback)
-      #         if cmp.visible() then
-      #           cmp.select_next_item()
-      #         elseif luasnip.expandable() then
-      #           luasnip.expand()
-      #         elseif luasnip.expand_or_jumpable() then
-      #           luasnip.expand_or_jump()
-      #         elseif check_backspace() then
-      #           fallback()
-      #         else
-      #           fallback()
-      #         end
-      #       end
-      #     '';
-      #     modes = [ "i" "s" ];
-      #   };
-      # };
         mapping = {
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
@@ -150,6 +153,30 @@
           };
         }; 
       };
+      # copilot-lua = {
+      #   enable = false;
+      #   suggestion = {
+      #     enabled = false;
+      #   };
+      #   panel = {
+      #     enabled = false;
+      #   };
+      #   filetypes = {
+      #     rust = true;
+      #     go = true;
+      #     zig = true;
+      #   };
+      # };
+      # copilot-cmp = {
+      #   enable = true;
+      # };
+      # copilot-vim = {
+      #   enable = false;
+      #   filetypes = {
+      #     rust = true;
+      #   };
+      # };
+
     };
     extraPlugins = with pkgs.vimPlugins; [
       {

@@ -46,6 +46,8 @@
       winwidth = 10;
       winminwidth = 10;
       equalalways = false;
+
+      clipboard = "unnamedplus";
     };
   };
 }
